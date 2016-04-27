@@ -55,11 +55,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
           <h3>TFL TIMS Visualisation</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="#overview" class="mdl-layout__tab is-active">Live Feed</a>
@@ -71,6 +67,7 @@
         <div class="mdl-layout__tab-panel is-active" id="overview">
 
           <!-- notifications area -->
+          <!--
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
@@ -79,13 +76,13 @@
               </div>
             </div>
           </section>
+          -->
 
           <!-- maps full width area -->
-          <section class="section--footer mdl-color--white mdl-grid">
-            <div class="tfl-app">
-              <div class="tfl-map" id="tfl-map"></div>
-            </div>
-          </section>
+          <div class="tfl-app">
+            <div class="tfl-map" id="tfl-map"></div>
+          </div>
+
         </div>
 
         <div class="mdl-layout__tab-panel" id="about">
@@ -119,6 +116,7 @@
     </div>
 
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBASMmpmSTREMdKu-8cIe36scueahuHW1o&callback=initMap"></script>
     <!-- build:js(app/) ../../scripts/main.min.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
