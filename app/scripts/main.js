@@ -120,8 +120,24 @@ class TflApp {
     let marker = new google.maps.Marker({
       position: disruption.coordinates,
       map: this.map,
-      title: this.status
+      title: disruption.status,
+      disruption: disruption
     });
+
+    marker.addListener('click', function() {
+      this.openInfoWindow(marker);
+    }.bind(this));
+  }
+
+  // displays info window
+  openInfoWindow(marker) {
+    if (!this.infoWindow) {
+      this.infoWindow = new google.maps.InfoWindow({content: ''});
+    }
+
+    let disruption = marker.disruption;
+    this.infoWindow.setContent(disruption.comments);
+    this.infoWindow.open(this.map, marker);
   }
 
 }
